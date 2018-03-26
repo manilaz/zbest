@@ -1,7 +1,7 @@
 package com.zbest;
 
-import com.zbest.model.reactor.deleting.Server;
-import com.zbest.model.reactor.deleting.Source;
+import com.zbest.raft.model.reactor.deleting.Server;
+import com.zbest.raft.model.reactor.deleting.Source;
 
 import java.util.ArrayList;
 

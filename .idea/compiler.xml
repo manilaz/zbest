@@ -22,12 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="raft" />
         <module name="thread" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="thread" target="1.8" />
-      <module name="zbest" target="1.8" />
+      <module name="raft" target="1.5" />
+      <module name="thread" target="1.5" />
+      <module name="zbest" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
