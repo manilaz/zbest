@@ -23,15 +23,27 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="queue" />
+      </profile>
+      <profile default="false" name="Annotation profile for raft" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="raft" />
+      </profile>
+      <profile default="false" name="Annotation profile for thread" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="thread" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="queue" target="1.8" />
-      <module name="raft" target="1.5" />
-      <module name="thread" target="1.5" />
-      <module name="zbest" target="1.5" />
+      <module name="raft" target="1.7" />
+      <module name="thread" target="1.7" />
+      <module name="zbest" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
