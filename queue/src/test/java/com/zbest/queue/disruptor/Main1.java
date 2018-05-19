@@ -1,6 +1,8 @@
 package com.zbest.queue.disruptor;
 
-import com.lmax.disruptor.*;
+import com.lmax.disruptor.BlockingWaitStrategy;
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.WorkHandler;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ExceptionHandlerWrapper;
 import com.lmax.disruptor.dsl.ProducerType;
@@ -8,9 +10,9 @@ import com.lmax.disruptor.dsl.ProducerType;
 import java.util.concurrent.Executors;
 
 /**
- * Created by zhangbin on 2018/5/17.
+ * Created by zhangbin on 2018/5/19.
  */
-public class Main {
+public class Main1 {
 
     public static void main(String[] args) {
 
@@ -33,7 +35,6 @@ public class Main {
         };
 
         WorkHandler[] workHandlers = new WorkHandler[50];
-
 
 
         disruptor.handleEventsWithWorkerPool(workHandlers);
