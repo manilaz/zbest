@@ -19,6 +19,6 @@ public class T3Handler implements EventHandler<TradeTransaction> ,WorkHandler<Tr
     public void onEvent(TradeTransaction tradeTransaction) throws Exception {
         System.out.println("t3:==");
 
-        Thread.sleep(4*1000);
+        Thread.sleep(1*1000);
     }
 }

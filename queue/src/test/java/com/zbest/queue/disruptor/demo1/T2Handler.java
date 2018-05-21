@@ -19,6 +19,6 @@ public class T2Handler implements EventHandler<TradeTransaction>,WorkHandler<Tra
         System.out.println("tradeTransaction:"
                 +tradeTransaction.getId()+","+tradeTransaction.getPrice());
 
-        Thread.sleep(2*1000);
+        Thread.sleep(1*1000);
     }
 }

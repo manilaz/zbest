@@ -20,7 +20,7 @@ public class T1Handler implements EventHandler<TradeTransaction>,WorkHandler<Tra
         event.setId(UUID.randomUUID().toString());
         System.out.println(event.getId());
 
-        Thread.sleep(3*1000);
+        Thread.sleep(10*1000);
 
     }
 }
