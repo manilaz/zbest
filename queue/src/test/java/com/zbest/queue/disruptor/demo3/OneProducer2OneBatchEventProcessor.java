@@ -1,14 +1,11 @@
 package com.zbest.queue.disruptor.demo3;
 
-import com.lmax.disruptor.BatchEventProcessor;
-import com.lmax.disruptor.BlockingWaitStrategy;
-import com.lmax.disruptor.RingBuffer;
-import com.lmax.disruptor.SequenceBarrier;
+import com.lmax.disruptor.*;
 import com.lmax.disruptor.dsl.ProducerType;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by zhangbin on 2018/5/24.
@@ -20,18 +17,20 @@ public class OneProducer2OneBatchEventProcessor {
         long beginTime = System.currentTimeMillis();
 
 
-        int bufferSize = 1024;
+        int bufferSize = 1024*4;
 
-        ExecutorService executor = Executors.newFixedThreadPool(1024);
+        ExecutorService executor = Executors.newFixedThreadPool(1024*2);
 
         TradeEventFactory factory = new TradeEventFactory();
 
-        RingBuffer<TradeEvent> ringBuffer = RingBuffer.create(ProducerType.SINGLE, factory, bufferSize, new BlockingWaitStrategy());
+        RingBuffer<TradeEvent> ringBuffer = RingBuffer.create(ProducerType.SINGLE, factory, bufferSize, new YieldingWaitStrategy());
 
 
         SequenceBarrier sequenceBarrier = ringBuffer.newBarrier();
 
-        Event1Handler handler1 = new Event1Handler();
+        CountDownLatch downLatch = new CountDownLatch(1);
+
+        Event1Handler handler1 = new Event1Handler(downLatch);
 
         BatchEventProcessor<TradeEvent> processor1 = new BatchEventProcessor<>(ringBuffer, sequenceBarrier, handler1);
 
@@ -42,7 +41,8 @@ public class OneProducer2OneBatchEventProcessor {
 
         executor.submit(processor);
 
-        long end = 10;
+        long end = 10000;
+
 
         for (int i = 0; i < end; i++) {
 
@@ -56,22 +56,21 @@ public class OneProducer2OneBatchEventProcessor {
 
 
 
+        downLatch.await();
+
+//        boolean isClose= true;
+//        while(isClose){
+//            Thread.sleep(100);
+//            if(executor.isTerminated()){
+//                isClose= false;
+//            }
+//        }
+
+
+//        executor.awaitTermination(1000, TimeUnit.NANOSECONDS);
+//
         executor.shutdown();
-
-        executor.awaitTermination(1000, TimeUnit.NANOSECONDS);
-
         processor.halt();
-
-
-
-
-        boolean isClose= true;
-        while(isClose){
-            Thread.sleep(1);
-            if(executor.isTerminated()){
-                isClose= false;
-            }
-        }
         System.out.println("总耗时:" + (System.currentTimeMillis() - beginTime));
     }
 }
