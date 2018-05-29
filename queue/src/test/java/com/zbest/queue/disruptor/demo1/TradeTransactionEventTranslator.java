@@ -21,5 +21,4 @@ public class TradeTransactionEventTranslator implements EventTranslator<TradeTra
         return trade;
     }
 
-
 }
