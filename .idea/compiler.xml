@@ -38,11 +38,19 @@
         <processorPath useClasspath="true" />
         <module name="queue" />
       </profile>
+      <profile default="false" name="Annotation profile for websocket" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="websocket" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="queue" target="1.8" />
       <module name="raft" target="1.7" />
       <module name="thread" target="1.7" />
+      <module name="websocket" target="1.8" />
       <module name="zbest" target="1.7" />
     </bytecodeTargetLevel>
   </component>

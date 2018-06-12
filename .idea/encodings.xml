@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/queue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/raft" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/thread" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/websocket" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -4,17 +4,16 @@ import com.lmax.disruptor.dsl.Disruptor;
 import com.zbest.queue.bus.OrderHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
- * Created by zhangbin on 2018/6/5.
+ * Created by zhangbin on 2018/6/7.
  */
-
-@WebListener
-public class DisruptorListener implements ServletContextListener{
+@Component
+public class DisruptorCycle {
 
     @Autowired
     private Disruptor<EventMap> disruptor;
@@ -22,8 +21,13 @@ public class DisruptorListener implements ServletContextListener{
     @Value("${disruptor.consumer.workSize}")
     private int workSize;
 
-    @Override
-    public void contextInitialized(ServletContextEvent servletContextEvent) {
+    @PreDestroy
+    public void destory(){
+        disruptor.shutdown();
+    }
+
+    @PostConstruct
+    public void strart(){
 
         OrderHandler[] handlers = new OrderHandler[workSize];
 
@@ -34,13 +38,5 @@ public class DisruptorListener implements ServletContextListener{
         disruptor.handleEventsWithWorkerPool(handlers);
 
         disruptor.start();
-
-        System.out.println("disruptor。。start");
-
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        disruptor.shutdown();
     }
 }

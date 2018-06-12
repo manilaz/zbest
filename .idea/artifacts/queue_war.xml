@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="queue:war">
+    <output-path>$PROJECT_DIR$/queue/target</output-path>
+    <root id="archive" name="queue-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="queue:war exploded" />
+    </root>
+  </artifact>
+</component>
