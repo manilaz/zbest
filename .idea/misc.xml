@@ -13,11 +13,11 @@
         <option value="$PROJECT_DIR$/thread/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/queue/pom.xml" />
-<<<<<<< HEAD
+
         <option value="$PROJECT_DIR$/websocket/pom.xml" />
-=======
+
         <option value="$PROJECT_DIR$/jgroups/pom.xml" />
->>>>>>> origin/master
+
       </list>
     </option>
   </component>
