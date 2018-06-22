@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.nonobank.architecture:cache-client:1.2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/nonobank/architecture/cache-client/1.2.0-SNAPSHOT/cache-client-1.2.0-20171013.065642-8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/nonobank/architecture/cache-client/1.2.0-SNAPSHOT/cache-client-1.2.0-20171013.065642-8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/nonobank/architecture/cache-client/1.2.0-SNAPSHOT/cache-client-1.2.0-20171013.065642-8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

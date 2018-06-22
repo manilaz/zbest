@@ -53,29 +53,6 @@
 			<artifactId>disruptor</artifactId>
 			<version>3.4.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.lmax</groupId>
-			<artifactId>disruptor</artifactId>
-			<version>3.4.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.lmax</groupId>
-			<artifactId>disruptor</artifactId>
-			<version>3.4.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.lmax</groupId>
-			<artifactId>disruptor</artifactId>
-			<version>3.4.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.lmax</groupId>
-			<artifactId>disruptor</artifactId>
-			<version>3.4.1</version>
-		</dependency>
 
 	</dependencies>
 

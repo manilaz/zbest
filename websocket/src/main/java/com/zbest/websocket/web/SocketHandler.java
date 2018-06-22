@@ -41,19 +41,14 @@ public class SocketHandler {
         System.out.println("有新链接加入!当前在线人数为" + map.size());
     }
 
-
     @OnClose
     public void onClose(){
-
         map.remove(this.sId);
-
         System.out.println("有连接退出，当前在线人数为" + map.size());
-
     }
 
     @OnError
     public void onError(Session session, Throwable error){
-
 
         System.out.println("用户"+this.sId+"连接失败");
     }

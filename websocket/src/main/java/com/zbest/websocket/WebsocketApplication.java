@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.zbest.websocket.*")
+@ComponentScan("com.*")
 public class WebsocketApplication {
 
 	public static void main(String[] args) {
