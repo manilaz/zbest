@@ -23,6 +23,8 @@ public class InitContextListener implements ServletContextListener{
 
     Logger logger = LoggerFactory.getLogger(InitContextListener.class);
 
+    public static JChannel jChannel;
+
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
 
@@ -35,11 +37,10 @@ public class InitContextListener implements ServletContextListener{
         logger.info("====================项目初始化=====================");
 
         try {
-            Address address = new IpAddress("127.0.0.1:7800");
 
-            JChannel jChannel = new JChannel(url);
-
-            jChannel.connect("cs",address,1000*5);
+            jChannel = new JChannel(url);
+            jChannel.setReceiver(new Node(jChannel));
+            jChannel.connect("cs");
 
             logger.info("=============={}==================",jChannel.getViewAsString());
 
