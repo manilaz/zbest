@@ -2,6 +2,9 @@ package com.zbest.queue.web;
 
 import com.zbest.queue.bus.EventPublish;
 import com.zbest.queue.bus.MapStore;
+import com.zbest.queue.bus.TestTask;
+import com.zbest.queue.delayed.Task;
+import com.zbest.queue.delayed.TaskQueueDaemonThread;
 import com.zbest.queue.disruptor.EventEnum;
 import com.zbest.queue.disruptor.EventMap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,6 +99,28 @@ public class TestFlux {
             session.send(just).then();
 
             return ServerResponse.ok().body(Mono.just("推送"+id+"成功"), String.class);
+        });
+    }
+
+
+
+    @Bean
+    public RouterFunction testDelayed(){
+
+        return RouterFunctions.route(RequestPredicates.POST("/webflux/delayed"), serverRequest -> {
+
+            Optional<String> msg = serverRequest.queryParam("msg");
+            Optional<String> time = serverRequest.queryParam("time");
+
+            Mono<Map> m = serverRequest.bodyToMono(Map.class);
+
+//            Long timeStr = Long.parseLong(time.get());
+//
+//            String msgStr = msg.get();
+
+            TaskQueueDaemonThread.getInstance().put(2,new TestTask("mmmmmmm"));
+
+            return ServerResponse.ok().body(Mono.just("成功"), String.class);
         });
     }
 }
