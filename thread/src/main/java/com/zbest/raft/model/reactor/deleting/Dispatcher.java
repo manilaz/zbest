@@ -3,7 +3,6 @@ package com.zbest.raft.model.reactor.deleting;
 import com.zbest.raft.model.reactor.event.EventHandler;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,12 +34,12 @@ public class Dispatcher {
 
         while (true){
 
-            List<Event> events = selector.select();
-            events.forEach(event->{
-                EventHandler eventHandler = eventHandlers.get(event.type);
-                eventHandler.handle(event);
-                return;
-            });
+//            List<Event> events = selector.select();
+//            events.forEach(event->{
+//                EventHandler eventHandler = eventHandlers.get(event.type);
+//                eventHandler.handle(event);
+//                return;
+//            });
         }
     }
 

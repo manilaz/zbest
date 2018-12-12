@@ -58,6 +58,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Annotation profile for thread-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="thread-web" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="demo" target="1.8" />
@@ -65,6 +72,7 @@
       <module name="queue" target="1.8" />
       <module name="raft" target="1.7" />
       <module name="thread" target="1.7" />
+      <module name="thread-web" target="1.8" />
       <module name="websocket" target="1.8" />
       <module name="zbest" target="1.7" />
     </bytecodeTargetLevel>

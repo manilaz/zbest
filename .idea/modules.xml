@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/queue/queue.iml" filepath="$PROJECT_DIR$/queue/queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/raft/raft.iml" filepath="$PROJECT_DIR$/raft/raft.iml" />
       <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread-web/thread-web.iml" filepath="$PROJECT_DIR$/thread-web/thread-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/websocket/websocket.iml" filepath="$PROJECT_DIR$/websocket/websocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/zbest.iml" filepath="$PROJECT_DIR$/zbest.iml" />
     </modules>
